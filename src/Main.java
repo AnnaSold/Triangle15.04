@@ -8,6 +8,7 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) throws FileNotFoundException {
         ArrayList<Triangle> triangles = readFile();
+        calculateAllArea(triangles);
 
     }
 
@@ -26,4 +27,14 @@ public class Main {
         System.out.println(triangles);
         return triangles;
     }
-}
+    public static double calculateAllArea(ArrayList<Triangle> triangles){
+        double summa = 0;
+        for(Triangle t : triangles){
+            double s = t.calculateAreaTr(t.a, t.b, t.c);
+            summa += s;
+            System.out.println(summa);
+        }
+        System.out.println(summa);
+        return summa;
+
+}}

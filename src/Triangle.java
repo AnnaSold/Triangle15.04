@@ -9,14 +9,23 @@ public class Triangle {
         this.c = c;
     }
 
+    @Override
+    public String toString() {
+        return "Triangle{" +
+                "a=" + a +
+                ", b=" + b +
+                ", c=" + c +
+                '}';
+    }
 
-    public static void calculateStoronTr(Point a, Point b, Point c){
+    public static double calculateAreaTr(Point a, Point b, Point c){
         double ab = calculateLength(a, b);
         double bc = calculateLength(b,c);
         double ac = calculateLength(a,c);
         double p = (ab+bc+ac)/2;
-        double trArea =  (int) Math.sqrt(p * (p - ab) * (p - bc) * (p - ac));
-        System.out.println("Площадь треугольника" + trArea);
+        double trArea = (int) Math.sqrt(p * (p - ab) * (p - bc) * (p - ac));
+        return  trArea;
+
     }
 
     public static double calculateLength(Point a, Point b){
